@@ -33,12 +33,11 @@ class App extends Component {
     this.setState({todos: todos});
   }
   deleteTodo(index){
-    const toDoList = this.state.todos.filter(x => x !== index);
+    const toDoList = this.state.todos.filter(x => x.description !== index.parentNode.description);
     this.setState({todos: toDoList});
   }
   handleClick(e){
-    e.preventDefault();
-    this.deleteTodo(index)
+    this.deleteTodo(e)
   }
   render() {
     return (
